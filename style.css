@@ -1,0 +1,264 @@
+:root {
+    --primary: #191a1c;      /* Gris-bleu profond (contraste +12%) */
+    --secondary: #391cb9;    /* Brume froide désaturée */
+    --accent: #A6B4C5;       /* Nuage légèrement doré */
+    --dark: #1E262B;         /* Roche volcanique plus contrastée */
+    --light: #F0F4F8;        /* Ciel légèrement plus clair */
+    --glass: rgba(166, 180, 197, 0.12); /* Transparence plus naturelle */
+}
+
+    
+    *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+    }
+    
+    body {
+    background-image: url("img/bg.png");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    color: var(--light);
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+    }
+    
+    
+    
+    .glass-header {
+    padding: 1rem ;
+    text-align: center;
+    position: relative;
+    
+    }
+    
+    .glass-header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    }
+    
+    .gradient-text {
+    background: linear-gradient(45deg, var(--primary), white);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+    
+    .header-accent {
+    width: 200px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    margin: 0 auto;
+    border-radius: 2px;
+    }
+    
+    .container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    }
+    
+    .glass-panel {
+    background: var(--glass);
+    backdrop-filter: blur(3px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    
+    }
+    .input-group {
+    position: relative;
+    margin-bottom: 2rem;
+    }
+    
+    .input-group label {
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--light);
+    opacity: 1;
+
+    }
+    
+    textarea {
+    width: 100%;
+    height: 150px;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: var(--light);
+    font-size: 1.1rem;
+    resize: none;
+    transition: all 0.3s ease;
+    }
+    
+    textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+    }
+    
+    
+    .language-tags {
+    position: absolute;
+    margin-bottom: 0.3rem;
+    bottom: -1.8rem;
+    right: 0;
+    display: flex;
+    gap: 0.5rem;
+    }
+    
+    .language-tags span {
+    background: var(--secondary);
+    color: white;
+    padding: 0.2rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    }
+    
+    .convert-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: linear-gradient(45deg, var(--primary), var(--secondary));
+    border: none;
+    border-radius: 12px;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    }
+    
+    .convert-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(108, 99, 255, 0.3);
+    }
+    
+    .result-box {
+    margin-top: 2rem;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 1.5rem;
+    }
+    
+    .result-box h3 {
+    margin-bottom: 1rem;
+    color: var(--accent);
+    font-size: 1.1rem;
+    }
+    
+    .output-container {
+    position: relative;
+    min-height: 100px;
+    padding: 1.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;  /* Prevents text from overflowing */
+    word-break: break-word; /* Ensures long words break */
+    max-height: 700px; /* Limits the height */
+    }
+    
+    .tifinagh-font {
+    font-family: 'Noto Sans Tifinagh', sans-serif;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    flex-grow: 1;
+
+    overflow-wrap: break-word; /* Ensures long text wraps */
+    white-space: pre-wrap; /* Keeps formatting but allows wrapping */
+    max-width: 100%; /* Ensures it does not exceed container width */
+    }
+    
+    .copy-btn {
+    background: none;
+    border: none;
+    color: var(--light);
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    }
+    
+    .copy-btn:hover {
+    color: var(--accent);
+    }
+
+    .copy-notification {
+        visibility: hidden;
+        min-width: 10px;
+        background: linear-gradient(45deg, #52d756, #00bfae); /* Gradient for a modern look */
+        color: white;
+        text-align: center;
+        border-radius: 10px; /* More rounded for a modern feel */
+        padding: 8px 12px;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        font-size: 16px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Sleek font */
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
+        opacity: 0;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        transform: translateY(20px); /* Slight slide-up effect */
+    }
+    
+    .copy-notification.show {
+        visibility: visible;
+        opacity: 1;
+        transform: translateY(0); /* Slide up to original position */
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3); /* Glowing effect */
+        animation: glow 1s infinite alternate; /* Glowing effect */
+    }
+    
+    @keyframes glow {
+        0% {
+            box-shadow: 0 0 5px #52d756, 0 0 10px #00bfae, 0 0 15px #52d756;
+        }
+        100% {
+            box-shadow: 0 0 7px #52d756, 0 0 12px #00bfae, 0 0 18px #52d756;
+        }
+    }
+    
+    .glass-footer {
+    text-align: center;
+    padding: 1.2rem;
+    margin-top: 1rem;
+    background: var(--glass);
+    backdrop-filter: blur(10px);
+    position: relative;
+    }
+    
+    .glass-footer p {
+    opacity: 0.8;
+    font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+    .glass-header h1 {
+    font-size: 2rem;
+    flex-direction: column;
+    }
+    
+    .glass-panel {
+        padding: 1.5rem;
+    }
+    
+    textarea {
+        height: 120px;
+    }
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="icon" type="image/png" href="img/logo1.png"/>
+    <title>Tifinagh Linguistic Tool</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tifinagh&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="script.js"></script>
+</head>
+
+<body> 
+    <div class="gradient-background"></div>  
+    <header class="glass-header"> 
+        <h1> <span class="gradient-text">ⵣ THIFINAƔ</span><span class="gradient-text">Converter ⵣ</span></h1>
+        <div class="header-accent"></div> 
+    </header>
+
+    <main class="container">
+        <div class="converter-box glass-panel">
+            <div class="input-group">
+                <label for="inputText"><h3>Enter Text</h3></label>
+                <textarea id="inputText" placeholder="Type in Arabic, French, or English..." onblur="convertToLowercase()"></textarea>
+                <div class="language-tags">
+                    <span>AR</span>
+                    <span>FR</span>
+                    <span>EN</span>
+                </div>
+            </div>
+            
+            <button class="convert-btn" onclick="convertToTifinagh()">
+                <i data-feather="refresh-ccw"></i>
+                Convert
+            </button>
+    
+            <div class="result-box">
+                <h3>Conversion Result</h3>
+                <div class="output-container">
+                    <p id="outputText" class="tifinagh-font"></p>
+                    <button class="copy-btn" onclick="copyResult()">
+                        <i data-feather="copy"></i>
+                        <div id="copyNotification" class="copy-notification">
+                            Copied!
+                        </div>
+                    </button>
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="glass-footer">
+        <p>Made with ❤️ by Anis BENINI © 2025 | Tifinaɣ Linguistic Tool</p>
+        <div class="footer-accent"></div>
+    </footer>
+    <script>feather.replace();</script>
+</body> 
+</html> 
